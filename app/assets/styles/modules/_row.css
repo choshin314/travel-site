@@ -1,21 +1,132 @@
-.row {
+.grid-row {
     display: grid;
     grid-template-columns: 1fr;
 
+    &--t-padding {
+        padding-top: 80px;
+    }
+
     &--gap {
         column-gap: 64px;
+    }
+    
+    &--gap-small {
+        column-gap: 44px;
     }
 
     &--gap-large {
         column-gap: 100px;
     }
 
+    @mixin atMedium {
+        &--medium-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--medium-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &--medium-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    
+    @mixin atLarge {
+        &--large-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--large-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &--large-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    /* Begin equal height rules */
+
+    &--equal-height-at-medium > * {
+        @mixin atMedium {
+            align-self: stretch;
+            & > div {
+                height: 100%;
+            }
+        }
+    }
+
+    &--equal-height-at-large > * {
+        @mixin atLarge {
+            align-self: stretch;
+            & > div {
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr;
+
     &__b-margin-until-medium {
         margin-bottom: 1rem;
     }
 
+    &__b-margin-until-large {
+        margin-bottom: 1rem;
+    }
+
+    &--t-padding {
+        padding-top: 80px;
+    }
+
     @mixin atMedium {
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(12, minmax(0,1fr));
+
+        &--gap > * {
+            margin-right: 32px;
+            margin-left: 32px;
+        }
+    
+        &--gap > *:first-child {
+            margin-left: 0;
+        }
+    
+        &--gap > *:last-child {
+            margin-right: 0;
+        }
+
+        &--gap-small > * {
+            margin-right: 22px;
+            margin-left: 22px;
+        }
+    
+        &--gap-small > *:first-child {
+            margin-left: 0;
+        }
+    
+        &--gap-small > *:last-child {
+            margin-right: 0;
+        }
+    
+        &--gap-large > * {
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+    
+        &--gap-large > *:first-child {
+            margin-left: 0;
+        }
+    
+        &--gap-large > *:last-child {
+            margin-right: 0;
+        }
+
+        /*columns when medium width */
 
         &__medium-1 {
             grid-column: span 1;
@@ -67,6 +178,81 @@
 
         &__b-margin-until-medium {
             margin-bottom: 0;
+        }
+    }
+
+    /*columns when large width */
+    @mixin atLarge {
+        &__large-1 {
+            grid-column: span 1;
+        }
+
+        &__large-2 {
+            grid-column: span 2;
+        }
+
+        &__large-3 {
+            grid-column: span 3;
+        }
+
+        &__large-4 {
+            grid-column: span 4;
+        }
+
+        &__large-5 {
+            grid-column: span 5;
+        }
+
+        &__large-6 {
+            grid-column: span 6;
+        }
+
+        &__large-7 {
+            grid-column: span 7;
+        }
+
+        &__large-8 {
+            grid-column: span 8;
+        }
+
+        &__large-9 {
+            grid-column: span 9;
+        }
+
+        &__large-10 {
+            grid-column: span 10;
+        }
+
+        &__large-11 {
+            grid-column: span 11;
+        }
+
+        &__large-12 {
+            grid-column: span 12;
+        }
+
+        &__b-margin-until-large {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Begin equal height rules */
+
+    &--equal-height-at-medium > * {
+        @mixin atMedium {
+            align-self: stretch;
+            & > div {
+                height: 100%;
+            }
+        }
+    }
+
+    &--equal-height-at-large > * {
+        @mixin atLarge {
+            align-self: stretch;
+            & > div {
+                height: 100%;
+            }
         }
     }
 }
