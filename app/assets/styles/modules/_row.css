@@ -1,9 +1,23 @@
-.grid-row {
+.row {
     display: grid;
     grid-template-columns: 1fr;
 
     &--t-padding {
         padding-top: 80px;
+    }
+
+    &--b-margin-until-medium {
+        margin-bottom: 1rem;
+        @mixin atMedium {
+            margin-bottom: 0;
+        }
+    }
+
+    &--b-margin-until-large {
+        margin-bottom: 1rem;
+        @mixin atLarge {
+            margin-bottom: 0;
+        }
     }
 
     &--gap {
@@ -19,6 +33,7 @@
     }
 
     @mixin atMedium {
+        /*Total Columns*/
         &--medium-2 {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -30,9 +45,67 @@
         &--medium-4 {
             grid-template-columns: repeat(4, 1fr);
         }
+
+        &--medium-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        &--medium-8 {
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        &--medium-12 {
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        /*Item Sizing*/
+        &__medium-column-2 {
+            grid-column: span 2;
+        }
+
+        &__medium-column-3 {
+            grid-column: span 3;
+        }
+
+        &__medium-column-4 {
+            grid-column: span 4;
+        }
+
+        &__medium-column-5 {
+            grid-column: span 5;
+        }
+
+        &__medium-column-6 {
+            grid-column: span 6;
+        }
+
+        &__medium-column-7 {
+            grid-column: span 7;
+        }
+
+        &__medium-column-8 {
+            grid-column: span 8;
+        }
+
+        &__medium-column-9 {
+            grid-column: span 9;
+        }
+
+        &__medium-column-10 {
+            grid-column: span 10;
+        }
+
+        &__medium-column-11 {
+            grid-column: span 11;
+        }
+
+        &__medium-column-12 {
+            grid-column: span 12;
+        }
     }
     
     @mixin atLarge {
+        /*Total Columns*/
         &--large-2 {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -44,6 +117,63 @@
         &--large-4 {
             grid-template-columns: repeat(4, 1fr);
         }
+
+        &--large-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        &--large-8 {
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        &--large-12 {
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        /*Item Sizing*/
+        &__large-column-2 {
+            grid-column: span 2;
+        }
+
+        &__large-column-3 {
+            grid-column: span 3;
+        }
+
+        &__large-column-4 {
+            grid-column: span 4;
+        }
+
+        &__large-column-5 {
+            grid-column: span 5;
+        }
+
+        &__large-column-6 {
+            grid-column: span 6;
+        }
+
+        &__large-column-7 {
+            grid-column: span 7;
+        }
+
+        &__large-column-8 {
+            grid-column: span 8;
+        }
+
+        &__large-column-9 {
+            grid-column: span 9;
+        }
+
+        &__large-column-10 {
+            grid-column: span 10;
+        }
+
+        &__large-column-11 {
+            grid-column: span 11;
+        }
+
+        &__large-column-12 {
+            grid-column: span 12;
+        }
     }
 
     /* Begin equal height rules */
@@ -66,193 +196,4 @@
         }
     }
 
-}
-
-.row {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    &__b-margin-until-medium {
-        margin-bottom: 1rem;
-    }
-
-    &__b-margin-until-large {
-        margin-bottom: 1rem;
-    }
-
-    &--t-padding {
-        padding-top: 80px;
-    }
-
-    @mixin atMedium {
-        grid-template-columns: repeat(12, minmax(0,1fr));
-
-        &--gap > * {
-            margin-right: 32px;
-            margin-left: 32px;
-        }
-    
-        &--gap > *:first-child {
-            margin-left: 0;
-        }
-    
-        &--gap > *:last-child {
-            margin-right: 0;
-        }
-
-        &--gap-small > * {
-            margin-right: 22px;
-            margin-left: 22px;
-        }
-    
-        &--gap-small > *:first-child {
-            margin-left: 0;
-        }
-    
-        &--gap-small > *:last-child {
-            margin-right: 0;
-        }
-    
-        &--gap-large > * {
-            margin-right: 50px;
-            margin-left: 50px;
-        }
-    
-        &--gap-large > *:first-child {
-            margin-left: 0;
-        }
-    
-        &--gap-large > *:last-child {
-            margin-right: 0;
-        }
-
-        /*columns when medium width */
-
-        &__medium-1 {
-            grid-column: span 1;
-        }
-
-        &__medium-2 {
-            grid-column: span 2;
-        }
-
-        &__medium-3 {
-            grid-column: span 3;
-        }
-
-        &__medium-4 {
-            grid-column: span 4;
-        }
-
-        &__medium-5 {
-            grid-column: span 5;
-        }
-
-        &__medium-6 {
-            grid-column: span 6;
-        }
-
-        &__medium-7 {
-            grid-column: span 7;
-        }
-
-        &__medium-8 {
-            grid-column: span 8;
-        }
-
-        &__medium-9 {
-            grid-column: span 9;
-        }
-
-        &__medium-10 {
-            grid-column: span 10;
-        }
-
-        &__medium-11 {
-            grid-column: span 11;
-        }
-
-        &__medium-12 {
-            grid-column: span 12;
-        }
-
-        &__b-margin-until-medium {
-            margin-bottom: 0;
-        }
-    }
-
-    /*columns when large width */
-    @mixin atLarge {
-        &__large-1 {
-            grid-column: span 1;
-        }
-
-        &__large-2 {
-            grid-column: span 2;
-        }
-
-        &__large-3 {
-            grid-column: span 3;
-        }
-
-        &__large-4 {
-            grid-column: span 4;
-        }
-
-        &__large-5 {
-            grid-column: span 5;
-        }
-
-        &__large-6 {
-            grid-column: span 6;
-        }
-
-        &__large-7 {
-            grid-column: span 7;
-        }
-
-        &__large-8 {
-            grid-column: span 8;
-        }
-
-        &__large-9 {
-            grid-column: span 9;
-        }
-
-        &__large-10 {
-            grid-column: span 10;
-        }
-
-        &__large-11 {
-            grid-column: span 11;
-        }
-
-        &__large-12 {
-            grid-column: span 12;
-        }
-
-        &__b-margin-until-large {
-            margin-bottom: 0;
-        }
-    }
-
-    /* Begin equal height rules */
-
-    &--equal-height-at-medium > * {
-        @mixin atMedium {
-            align-self: stretch;
-            & > div {
-                height: 100%;
-            }
-        }
-    }
-
-    &--equal-height-at-large > * {
-        @mixin atLarge {
-            align-self: stretch;
-            & > div {
-                height: 100%;
-            }
-        }
-    }
 }
