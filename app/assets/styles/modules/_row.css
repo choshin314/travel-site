@@ -1,7 +1,14 @@
 .row {
     display: grid;
     grid-template-columns: 1fr;
-    column-gap: 64px;
+
+    &--gap {
+        column-gap: 64px;
+    }
+
+    &--gap-large {
+        column-gap: 100px;
+    }
 
     &__b-margin-until-medium {
         margin-bottom: 1rem;
