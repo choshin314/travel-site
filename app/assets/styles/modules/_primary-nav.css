@@ -29,6 +29,9 @@
             padding: 12px 0;
             font-size: 1rem;
             background-color: transparent;
+            &.current-link {
+                color: #fabb69;
+            }
         }
     }
 }
