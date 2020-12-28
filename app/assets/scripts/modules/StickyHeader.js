@@ -31,7 +31,6 @@ class StickyHeader {
                         prevSection.classList.remove('current-link')
                     }
                     let matchingLink = entry.target.dataset.matchingLink;
-                    console.log(matchingLink)
                     document.querySelector(matchingLink).classList.add('current-link');
                 }
             })
